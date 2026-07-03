@@ -6,3 +6,10 @@ namespace: cnpg-system
 
 resources:
   - cluster.yaml
+
+configMapGenerator:
+  - name: postgresql-init
+    options:
+      disableNameSuffixHash: true
+    files:
+      - init.sql=../postgresql/init.sql
